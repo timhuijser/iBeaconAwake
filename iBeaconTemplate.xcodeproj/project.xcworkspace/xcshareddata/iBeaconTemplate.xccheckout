@@ -10,31 +10,31 @@
 	<string>iBeaconTemplate</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>8D7D58E0-B202-4975-B5C4-E5208C4AAF9D</key>
-		<string>ssh://github.com/relevante/ibeacon-tutorial.git</string>
+		<key>6463BBBDCCA3FDA8361D804C03DF5E543B5E280B</key>
+		<string>https://github.com/timhuijser/iBeaconAwake.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>iBeaconTemplate.xcodeproj/project.xcworkspace</string>
+	<string>iBeaconTemplate.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>8D7D58E0-B202-4975-B5C4-E5208C4AAF9D</key>
+		<key>6463BBBDCCA3FDA8361D804C03DF5E543B5E280B</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/relevante/ibeacon-tutorial.git</string>
+	<string>https://github.com/timhuijser/iBeaconAwake.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>8D7D58E0-B202-4975-B5C4-E5208C4AAF9D</string>
+	<string>6463BBBDCCA3FDA8361D804C03DF5E543B5E280B</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>8D7D58E0-B202-4975-B5C4-E5208C4AAF9D</string>
+			<string>6463BBBDCCA3FDA8361D804C03DF5E543B5E280B</string>
 			<key>IDESourceControlWCCName</key>
-			<string>iBeaconTemplate</string>
+			<string>iBeacon%20App</string>
 		</dict>
 	</array>
 </dict>
