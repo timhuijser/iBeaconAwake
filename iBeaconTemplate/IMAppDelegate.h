@@ -13,7 +13,11 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) CLLocationManager *locationManager;
+@property CLBeaconRegion *beaconRegion;
 @property CLProximity lastProximity;
 @property int lastBeaconMinor;
+
+-(void)startRanging;
+-(void)stopRanging;
 
 @end

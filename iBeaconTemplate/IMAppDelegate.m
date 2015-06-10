@@ -8,6 +8,7 @@
 
 #import "IMAppDelegate.h"
 #import "IMViewController.h"
+#import "IMStatViewController.h"
 #import <CoreLocation/CoreLocation.h>
 #import <Parse/Parse.h>
 
@@ -50,7 +51,7 @@ NSDate *previousSave = 0;
     // Override point for customization after application launch.
     NSUUID *beaconUUID = [[NSUUID alloc] initWithUUIDString:@"FDA50693-A4E2-4FB1-AFCF-C6EB07647825"];
     NSString *regionIdentifier = @"us.iBeaconModules";
-    CLBeaconRegion *beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:beaconUUID identifier:regionIdentifier];
+    self.beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:beaconUUID identifier:regionIdentifier];
 
     switch ([CLLocationManager authorizationStatus]) {
         case kCLAuthorizationStatusAuthorizedAlways:
@@ -79,8 +80,8 @@ NSDate *previousSave = 0;
     }
     self.locationManager.delegate = self;
     self.locationManager.pausesLocationUpdatesAutomatically = NO;
-    [self.locationManager startMonitoringForRegion:beaconRegion];
-    [self.locationManager startRangingBeaconsInRegion:beaconRegion];
+    [self.locationManager startMonitoringForRegion:self.beaconRegion];
+    [self.locationManager startRangingBeaconsInRegion:self.beaconRegion];
     [self.locationManager startUpdatingLocation];
     
     return YES;
@@ -102,6 +103,14 @@ NSDate *previousSave = 0;
     [self sendLocalNotificationWithMessage:@"You exited the region."];
 }
 
+-(void)startRanging {
+    [self.locationManager startRangingBeaconsInRegion:self.beaconRegion];
+}
+
+-(void)stopRanging {
+    [self.locationManager stopRangingBeaconsInRegion:self.beaconRegion];
+}
+
 -(void)sendLocalNotificationWithMessage:(NSString*)message {
     UILocalNotification *notification = [[UILocalNotification alloc] init];
     notification.fireDate = [NSDate dateWithTimeIntervalSinceNow:60];
@@ -111,15 +120,18 @@ NSDate *previousSave = 0;
 }
 
 -(void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region {
+    
     NSString *message = @"";
     int proximity_type;
     
-    IMViewController *viewController = (IMViewController*)self.window.rootViewController;
+    IMStatViewController *viewController = (IMStatViewController*)self.window.rootViewController;
     viewController.beacons = beacons;
-    [viewController.tableView reloadData];
-    [viewController viewDidLoad];
+    //[viewController.tableView reloadData];
+    [viewController updateScore];
+    
     
     if(beacons.count > 0) {
+        
         CLBeacon *nearestBeacon = beacons.firstObject;
         if((nearestBeacon.proximity == self.lastProximity && nearestBeacon.minor.intValue == self.lastBeaconMinor) || nearestBeacon.proximity == CLProximityUnknown) {
             return;
