@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:iBeaconTemplate.xcodeproj">
+      location = "self:/Users/Bravoure/Google Drive/Afstuderen/Prototype/iBeacon App/iBeaconTemplate.xcodeproj">
    </FileRef>
 </Workspace>

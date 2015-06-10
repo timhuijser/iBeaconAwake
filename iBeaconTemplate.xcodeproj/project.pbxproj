@@ -24,6 +24,7 @@
 		051D06511B246C0500ACA4EE /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 051D06501B246C0500ACA4EE /* libsqlite3.dylib */; };
 		051D06531B246C0C00ACA4EE /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 051D06521B246C0C00ACA4EE /* Accounts.framework */; };
 		051D06551B246C1300ACA4EE /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 051D06541B246C1300ACA4EE /* Social.framework */; };
+		059875BB1B284AE40096AF08 /* IMStatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 059875BA1B284AE40096AF08 /* IMStatViewController.m */; };
 		44DF2A7619377216001158B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44DF2A7519377216001158B0 /* Foundation.framework */; };
 		44DF2A7819377216001158B0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44DF2A7719377216001158B0 /* CoreGraphics.framework */; };
 		44DF2A7A19377216001158B0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44DF2A7919377216001158B0 /* UIKit.framework */; };
@@ -69,6 +70,8 @@
 		051D06501B246C0500ACA4EE /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		051D06521B246C0C00ACA4EE /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		051D06541B246C1300ACA4EE /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		059875B91B284AE40096AF08 /* IMStatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMStatViewController.h; sourceTree = "<group>"; };
+		059875BA1B284AE40096AF08 /* IMStatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMStatViewController.m; sourceTree = "<group>"; };
 		44DF2A7219377216001158B0 /* iBeaconTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBeaconTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44DF2A7519377216001158B0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		44DF2A7719377216001158B0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -189,6 +192,8 @@
 				44DF2A8719377216001158B0 /* Main.storyboard */,
 				44DF2A8A19377216001158B0 /* IMViewController.h */,
 				44DF2A8B19377216001158B0 /* IMViewController.m */,
+				059875B91B284AE40096AF08 /* IMStatViewController.h */,
+				059875BA1B284AE40096AF08 /* IMStatViewController.m */,
 				44DF2A8D19377216001158B0 /* Images.xcassets */,
 				44DF2A7C19377216001158B0 /* Supporting Files */,
 			);
@@ -331,6 +336,7 @@
 			files = (
 				44DF2A8619377216001158B0 /* IMAppDelegate.m in Sources */,
 				44DF2A8219377216001158B0 /* main.m in Sources */,
+				059875BB1B284AE40096AF08 /* IMStatViewController.m in Sources */,
 				44DF2A8C19377216001158B0 /* IMViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,7 +469,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iBeaconTemplate/iBeaconTemplate-Prefix.pch";
 				INFOPLIST_FILE = "iBeaconTemplate/iBeaconTemplate-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = iBeaconTemplate;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -480,7 +486,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iBeaconTemplate/iBeaconTemplate-Prefix.pch";
 				INFOPLIST_FILE = "iBeaconTemplate/iBeaconTemplate-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = iBeaconTemplate;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -501,7 +507,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "iBeaconTemplateTests/iBeaconTemplateTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = iBeaconTemplateTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -519,7 +525,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iBeaconTemplate/iBeaconTemplate-Prefix.pch";
 				INFOPLIST_FILE = "iBeaconTemplateTests/iBeaconTemplateTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = iBeaconTemplateTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};

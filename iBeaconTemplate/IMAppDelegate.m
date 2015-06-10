@@ -117,6 +117,7 @@ NSDate *previousSave = 0;
     IMViewController *viewController = (IMViewController*)self.window.rootViewController;
     viewController.beacons = beacons;
     [viewController.tableView reloadData];
+    [viewController viewDidLoad];
     
     if(beacons.count > 0) {
         CLBeacon *nearestBeacon = beacons.firstObject;
